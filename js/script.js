@@ -122,7 +122,7 @@
         var el = entry.target;
 
         // Stagger children if the element contains a grid
-        var grid = el.querySelector('.features__grid, .portfolio__grid, .pricing__grid, .team__grid, .faq__list');
+        var grid = el.querySelector('.features__grid, .portfolio__grid, .pricing__grid, .team__grid, .faq__list, .testimonials__grid');
         if (grid) {
           staggerChildren(grid);
         }
@@ -177,6 +177,110 @@
         blob.style.transform = 'translate(' + (x * speed) + 'px, ' + (y * speed) + 'px)';
       });
     });
+  }
+
+  /* ==========================================
+     PORTFOLIO MODALS
+     ========================================== */
+  var modalTriggers = document.querySelectorAll('[data-modal]');
+  var modals = document.querySelectorAll('.modal');
+
+  function openModal(id) {
+    var modal = document.getElementById(id);
+    if (!modal) return;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    // Focus the close button
+    var closeBtn = modal.querySelector('.modal__close');
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeModal(modal) {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function closeAllModals() {
+    modals.forEach(function (modal) {
+      closeModal(modal);
+    });
+  }
+
+  modalTriggers.forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      var modalId = this.getAttribute('data-modal');
+      openModal(modalId);
+    });
+  });
+
+  modals.forEach(function (modal) {
+    // Close on backdrop click
+    var backdrop = modal.querySelector('.modal__backdrop');
+    if (backdrop) {
+      backdrop.addEventListener('click', function () {
+        closeModal(modal);
+      });
+    }
+    // Close on close button
+    var closeBtn = modal.querySelector('.modal__close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function () {
+        closeModal(modal);
+      });
+    }
+  });
+
+  // Close modals on Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeAllModals();
+    }
+  });
+
+  /* ==========================================
+     ANIMATED COUNTERS
+     ========================================== */
+  var counters = document.querySelectorAll('.counter');
+
+  function animateCounter(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var numberEl = el.querySelector('.counter__number');
+    if (!numberEl || isNaN(target)) return;
+
+    var current = 0;
+    var duration = 1500;
+    var step = Math.max(1, Math.floor(duration / target));
+
+    function tick() {
+      current++;
+      numberEl.textContent = current;
+      if (current < target) {
+        setTimeout(tick, step);
+      }
+    }
+    tick();
+  }
+
+  if ('IntersectionObserver' in window && counters.length > 0) {
+    var counterObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var counterEls = entry.target.querySelectorAll('.counter');
+        counterEls.forEach(function (c) {
+          animateCounter(c);
+        });
+        counterObserver.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.3
+    });
+
+    var countersContainer = document.querySelector('.testimonials__counters');
+    if (countersContainer) {
+      counterObserver.observe(countersContainer);
+    }
   }
 
 })();
