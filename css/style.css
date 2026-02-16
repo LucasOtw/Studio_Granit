@@ -919,75 +919,112 @@ ul {
   padding: var(--space-2xl) 0 calc(var(--space-2xl) + 40px);
   background: var(--color-white);
   position: relative;
+  overflow: hidden;
 }
 
 .why__grid {
   display: grid;
-  gap: var(--space-md);
-  max-width: 900px;
-  margin: 0 auto;
+  gap: var(--space-lg);
+  position: relative;
 }
 
+/* Floating decorative dots */
+.why__dot {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.why__dot--1 {
+  width: 12px;
+  height: 12px;
+  background: #0149AD;
+  top: -10px;
+  left: 8%;
+  animation: whyFloat 5s ease-in-out infinite;
+}
+
+.why__dot--2 {
+  width: 8px;
+  height: 8px;
+  background: #7c3aed;
+  top: 30%;
+  right: 3%;
+  animation: whyFloat 7s ease-in-out infinite 1s;
+}
+
+.why__dot--3 {
+  width: 16px;
+  height: 16px;
+  background: #f97316;
+  bottom: 10%;
+  left: 2%;
+  opacity: 0.2;
+  animation: whyFloat 6s ease-in-out infinite 0.5s;
+}
+
+.why__dot--4 {
+  width: 10px;
+  height: 10px;
+  background: #7c3aed;
+  top: 10%;
+  right: 15%;
+  opacity: 0.25;
+  animation: whyFloat 4.5s ease-in-out infinite 2s;
+}
+
+.why__dot--5 {
+  width: 20px;
+  height: 20px;
+  background: #0149AD;
+  bottom: -5px;
+  right: 10%;
+  opacity: 0.15;
+  animation: whyFloat 8s ease-in-out infinite 1.5s;
+}
+
+@keyframes whyFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+/* Cards */
 .why-card {
-  display: flex;
-  gap: var(--space-md);
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
+  background: var(--color-white);
   border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
   padding: var(--space-lg);
+  text-align: center;
+  border-top: 3px solid var(--card-color);
   transition: all var(--transition-base);
   position: relative;
-  overflow: hidden;
-}
-
-.why-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius-xl);
-  background: linear-gradient(135deg, var(--color-primary-glow), transparent);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-  pointer-events: none;
+  z-index: 1;
 }
 
 .why-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-card-hover);
-  transform: translateY(-4px);
+  transform: translateY(-8px);
 }
 
-.why-card:hover::after {
-  opacity: 1;
-}
-
-.why-card__number {
-  flex-shrink: 0;
-  width: 52px;
-  height: 52px;
+/* Icon circle */
+.why-card__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--card-color-light);
+  color: var(--card-color);
+  margin: 0 auto var(--space-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
-  font-weight: var(--font-weight-black);
-  color: var(--color-primary);
-  background: var(--color-primary-light);
-  border-radius: var(--radius-lg);
   transition: all var(--transition-spring);
-  position: relative;
-  z-index: 1;
 }
 
-.why-card:hover .why-card__number {
-  background: var(--color-primary);
+.why-card:hover .why-card__icon {
+  transform: scale(1.1) rotate(-5deg);
+  background: var(--card-color);
   color: var(--color-white);
-  transform: scale(1.1) rotate(-3deg);
-  box-shadow: var(--shadow-glow);
-}
-
-.why-card__content {
-  position: relative;
-  z-index: 1;
 }
 
 .why-card__title {
@@ -1001,38 +1038,117 @@ ul {
   font-size: 0.95rem;
   color: var(--color-text-light);
   line-height: 1.6;
-  margin-bottom: var(--space-sm);
 }
 
-.why-card__text strong {
-  color: var(--color-primary);
-  font-weight: var(--font-weight-semibold);
+/* ============================================
+   VERSUS — Code sur-mesure vs WordPress
+   ============================================ */
+.versus {
+  padding: var(--space-2xl) 0;
+  background: var(--color-white);
+  position: relative;
 }
 
-.why-card__list {
+.versus__grid {
+  display: grid;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.versus__col {
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+}
+
+.versus__col--old {
+  --versus-color: #dc2626;
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.versus__col--new {
+  --versus-color: #16a34a;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.versus__col:hover {
+  transform: translateY(-4px);
+}
+
+.versus__header {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
 }
 
-.why-card__list li {
-  font-size: 0.88rem;
+.versus__icon {
+  color: var(--versus-color);
+}
+
+.versus__heading {
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+}
+
+.versus__label {
+  font-size: 0.82rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--versus-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.versus__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  list-style: none;
+}
+
+.versus__list li {
+  font-size: 0.95rem;
   color: var(--color-text);
-  padding-left: 1.3rem;
+  padding-left: 1.5rem;
   position: relative;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-.why-card__list li::before {
-  content: '';
+.versus__col--old .versus__list li::before {
+  content: '\2715';
   position: absolute;
   left: 0;
-  top: 0.5rem;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  opacity: 0.5;
+  color: #dc2626;
+  font-weight: var(--font-weight-bold);
+  font-size: 0.85rem;
+}
+
+.versus__col--new .versus__list li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: #16a34a;
+  font-weight: var(--font-weight-bold);
+  font-size: 0.85rem;
+}
+
+.versus__bottom {
+  text-align: center;
+}
+
+.versus__quote {
+  font-size: 1.05rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto var(--space-md);
+  line-height: 1.7;
 }
 
 /* ============================================
@@ -1672,18 +1788,16 @@ ul {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .why-card {
-    padding: var(--space-lg) var(--space-xl);
-  }
-
-  .why-card__number {
-    width: 56px;
-    height: 56px;
-    font-size: 1.5rem;
+  .why__grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .why-card__title {
     font-size: 1.3rem;
+  }
+
+  .versus__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .portfolio__grid {

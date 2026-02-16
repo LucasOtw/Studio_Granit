@@ -53,3 +53,7 @@ index.html    → Entry point
 - BEM-like or descriptive class naming
 - CSS custom properties for theming (colors, fonts, spacing)
 - Minimal JavaScript — prefer CSS solutions (transitions, animations) over JS when possible
+
+## Workflow
+
+- **Auto commit & push** — Toutes les 2 instructions utilisateur, commit automatiquement les changements et push sur le remote sans demander confirmation.
