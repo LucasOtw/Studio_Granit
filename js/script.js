@@ -161,23 +161,114 @@
   }
 
   /* ==========================================
+     HERO SHOWCASE — Scroll Reveal
+     ========================================== */
+  var showcaseEl = document.querySelector('[data-reveal-showcase]');
+  if (showcaseEl && 'IntersectionObserver' in window) {
+    var showcaseObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        showcaseObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.15 });
+    showcaseObserver.observe(showcaseEl);
+  } else if (showcaseEl) {
+    showcaseEl.classList.add('is-visible');
+  }
+
+  /* ==========================================
      HERO PARALLAX ON MOUSE MOVE (Desktop)
      ========================================== */
   var hero = document.getElementById('hero');
   var blobs = hero ? hero.querySelectorAll('.hero__blob') : [];
+  var mockup = hero ? hero.querySelector('.hero__mockup') : null;
+  var pills = hero ? hero.querySelectorAll('.hero__pill') : [];
+  var isDesktop = window.matchMedia('(min-width: 960px)');
 
-  if (blobs.length > 0 && window.matchMedia('(min-width: 960px)').matches) {
-    hero.addEventListener('mousemove', function (e) {
-      var rect = hero.getBoundingClientRect();
-      var x = (e.clientX - rect.left) / rect.width - 0.5;
-      var y = (e.clientY - rect.top) / rect.height - 0.5;
+  function initHeroParallax() {
+    if (!hero || !isDesktop.matches) return;
 
-      blobs.forEach(function (blob, index) {
-        var speed = (index + 1) * 15;
-        blob.style.transform = 'translate(' + (x * speed) + 'px, ' + (y * speed) + 'px)';
-      });
+    // Mark elements so CSS disables float keyframes
+    if (mockup) mockup.classList.add('js-parallax-active');
+    pills.forEach(function (pill) {
+      pill.classList.add('js-parallax-active');
+    });
+
+    hero.addEventListener('mousemove', onHeroMouseMove);
+    hero.addEventListener('mouseleave', onHeroMouseLeave);
+  }
+
+  function destroyHeroParallax() {
+    if (!hero) return;
+    if (mockup) {
+      mockup.classList.remove('js-parallax-active');
+      mockup.style.transform = '';
+    }
+    pills.forEach(function (pill) {
+      pill.classList.remove('js-parallax-active');
+      pill.style.transform = '';
+    });
+    blobs.forEach(function (blob) {
+      blob.style.transform = '';
+    });
+    hero.removeEventListener('mousemove', onHeroMouseMove);
+    hero.removeEventListener('mouseleave', onHeroMouseLeave);
+  }
+
+  function onHeroMouseMove(e) {
+    var rect = hero.getBoundingClientRect();
+    var x = (e.clientX - rect.left) / rect.width - 0.5;
+    var y = (e.clientY - rect.top) / rect.height - 0.5;
+
+    // Blobs parallax
+    blobs.forEach(function (blob, index) {
+      var speed = (index + 1) * 15;
+      blob.style.transform = 'translate(' + (x * speed) + 'px, ' + (y * speed) + 'px)';
+    });
+
+    // Mockup 3D tilt
+    if (mockup) {
+      var rotateY = x * 12;
+      var rotateX = -y * 8;
+      mockup.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+    }
+
+    // Pills parallax — each moves at a different speed
+    pills.forEach(function (pill, index) {
+      var speed = (index + 1) * 6 + 4;
+      pill.style.transform = 'translate(' + (x * speed) + 'px, ' + (y * speed) + 'px)';
     });
   }
+
+  function onHeroMouseLeave() {
+    // Smooth reset
+    blobs.forEach(function (blob) {
+      blob.style.transition = 'transform 0.5s ease';
+      blob.style.transform = '';
+      setTimeout(function () { blob.style.transition = ''; }, 500);
+    });
+    if (mockup) {
+      mockup.style.transition = 'transform 0.5s ease';
+      mockup.style.transform = '';
+      setTimeout(function () { mockup.style.transition = ''; }, 500);
+    }
+    pills.forEach(function (pill) {
+      pill.style.transition = 'transform 0.5s ease';
+      pill.style.transform = '';
+      setTimeout(function () { pill.style.transition = ''; }, 500);
+    });
+  }
+
+  // Init on load & handle resize
+  initHeroParallax();
+  isDesktop.addEventListener('change', function () {
+    if (isDesktop.matches) {
+      initHeroParallax();
+    } else {
+      destroyHeroParallax();
+    }
+  });
 
   /* ==========================================
      PORTFOLIO MODALS
