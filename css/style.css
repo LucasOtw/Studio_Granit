@@ -569,44 +569,67 @@ ul {
    ============================================ */
 .hero {
   padding: calc(68px + var(--space-3xl)) 0 calc(var(--space-3xl) + 40px);
+  background: var(--color-white);
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
-/* Background image */
-.hero__bg {
+/* Animated gradient blobs */
+.hero__blob {
   position: absolute;
-  inset: 0;
-  z-index: 0;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  will-change: transform;
 }
 
-.hero__bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.hero__blob--1 {
+  top: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: rgba(1, 73, 173, 0.08);
+  animation: blobFloat1 8s ease-in-out infinite;
 }
 
-/* Dark overlay with warm tint */
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    160deg,
-    rgba(13, 27, 42, 0.92) 0%,
-    rgba(13, 27, 42, 0.78) 50%,
-    rgba(13, 27, 42, 0.65) 100%
-  );
+.hero__blob--2 {
+  bottom: -15%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: rgba(1, 73, 173, 0.05);
+  animation: blobFloat2 10s ease-in-out infinite;
+}
+
+.hero__blob--3 {
+  top: 30%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background: rgba(1, 73, 173, 0.04);
+  animation: blobFloat3 12s ease-in-out infinite;
+}
+
+@keyframes blobFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-30px, 20px) scale(1.05); }
+  66% { transform: translate(20px, -15px) scale(0.95); }
+}
+
+@keyframes blobFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(25px, -20px) scale(1.08); }
+  66% { transform: translate(-15px, 25px) scale(0.96); }
+}
+
+@keyframes blobFloat3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-20px, -30px) scale(1.1); }
 }
 
 .hero__inner {
   position: relative;
-  z-index: 3;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: var(--space-xl);
@@ -622,11 +645,8 @@ ul {
   font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.8);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  color: var(--color-primary);
+  background: var(--color-primary-light);
   padding: 0.5rem 1.2rem;
   border-radius: var(--radius-full);
   margin-bottom: var(--space-md);
@@ -635,14 +655,14 @@ ul {
 .hero__title {
   font-size: 2.4rem;
   font-weight: var(--font-weight-black);
-  color: var(--color-white);
+  color: var(--color-dark);
   line-height: 1.1;
   letter-spacing: -0.03em;
   margin-bottom: var(--space-md);
 }
 
 .hero__title-accent {
-  background: linear-gradient(135deg, #f97316, #fb923c);
+  background: linear-gradient(135deg, var(--color-primary), #0168e0);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -650,7 +670,7 @@ ul {
 
 .hero__subtitle {
   font-size: 1.15rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-text-light);
   margin-bottom: var(--space-lg);
   line-height: 1.6;
 }
@@ -662,7 +682,7 @@ ul {
   align-items: center;
 }
 
-/* ---------- HERO SHOWCASE (phone mockup) ---------- */
+/* ---------- HERO SHOWCASE ---------- */
 .hero__showcase {
   position: relative;
   display: flex;
@@ -684,46 +704,63 @@ ul {
   transform: translateX(0);
 }
 
-/* ---------- PHONE MOCKUP ---------- */
-.hero__phone {
-  width: 220px;
-  background: #1a1a2e;
-  border-radius: 36px;
-  padding: 10px;
-  box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.4),
-    0 0 0 1px rgba(255, 255, 255, 0.08),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-  position: relative;
-  animation: phoneFloat 6s ease-in-out infinite;
+/* ---------- MOCKUP BROWSER ---------- */
+.hero__mockup {
+  width: 100%;
+  max-width: 420px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-white);
+  box-shadow: var(--shadow-lg);
+  animation: heroMockupFloat 6s ease-in-out infinite;
   will-change: transform;
 }
 
-@keyframes phoneFloat {
+@keyframes heroMockupFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
 }
 
-.hero__phone-notch {
-  width: 80px;
-  height: 6px;
-  background: #2a2a3e;
-  border-radius: 4px;
-  margin: 0 auto 8px;
+.hero__mockup-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.55rem 0.85rem;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
 }
 
-.hero__phone-screen {
-  border-radius: 26px;
-  overflow: hidden;
+.hero__mockup-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.hero__mockup-dot--red { background: #ff5f57; }
+.hero__mockup-dot--yellow { background: #febc2e; }
+.hero__mockup-dot--green { background: #28c840; }
+
+.hero__mockup-url {
+  flex: 1;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-light);
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  padding: 0.2rem 0.6rem;
+  margin-left: 0.5rem;
+}
+
+.hero__mockup-screen {
   line-height: 0;
-  aspect-ratio: 9 / 16;
 }
 
-.hero__phone-screen img {
+.hero__mockup-screen img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
+  object-fit: cover;
 }
 
 /* ---------- FLOATING PILLS ---------- */
@@ -732,15 +769,13 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: var(--color-white);
   color: var(--color-dark);
   font-size: 0.78rem;
   font-weight: var(--font-weight-semibold);
   padding: 0.45rem 0.85rem;
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-md);
   white-space: nowrap;
   opacity: 0;
   transform: scale(0.7) translateY(10px);
@@ -760,7 +795,7 @@ ul {
   }
 }
 
-/* Pill float animations */
+/* Pill float animation — each with slightly different params */
 @keyframes pillFloat1 {
   0%, 100% { transform: translate(0, 0); }
   50% { transform: translate(4px, -8px); }
@@ -781,7 +816,7 @@ ul {
   50% { transform: translate(-4px, -7px); }
 }
 
-/* Pill positions */
+/* Pill positions (mobile — relative to showcase) */
 .hero__pill--1 {
   top: 0;
   right: 0;
@@ -1722,8 +1757,8 @@ ul {
     justify-content: center;
   }
 
-  .hero__phone {
-    width: 240px;
+  .hero__mockup {
+    max-width: 480px;
   }
 
   .hero__pill--2 {
@@ -1796,8 +1831,8 @@ ul {
     padding: 2.5rem 0;
   }
 
-  .hero__phone {
-    width: 260px;
+  .hero__mockup {
+    max-width: 500px;
   }
 
   .hero__title {
@@ -1829,7 +1864,7 @@ ul {
   }
 
   /* On desktop, JS takes over — disable CSS float */
-  .hero__phone.js-parallax-active {
+  .hero__mockup.js-parallax-active {
     animation: none;
   }
 
