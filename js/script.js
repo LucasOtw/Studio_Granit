@@ -271,66 +271,6 @@
   });
 
   /* ==========================================
-     PORTFOLIO MODALS
-     ========================================== */
-  var modalTriggers = document.querySelectorAll('[data-modal]');
-  var modals = document.querySelectorAll('.modal');
-
-  function openModal(id) {
-    var modal = document.getElementById(id);
-    if (!modal) return;
-    modal.classList.add('is-open');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    // Focus the close button
-    var closeBtn = modal.querySelector('.modal__close');
-    if (closeBtn) closeBtn.focus();
-  }
-
-  function closeModal(modal) {
-    modal.classList.remove('is-open');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
-
-  function closeAllModals() {
-    modals.forEach(function (modal) {
-      closeModal(modal);
-    });
-  }
-
-  modalTriggers.forEach(function (trigger) {
-    trigger.addEventListener('click', function () {
-      var modalId = this.getAttribute('data-modal');
-      openModal(modalId);
-    });
-  });
-
-  modals.forEach(function (modal) {
-    // Close on backdrop click
-    var backdrop = modal.querySelector('.modal__backdrop');
-    if (backdrop) {
-      backdrop.addEventListener('click', function () {
-        closeModal(modal);
-      });
-    }
-    // Close on close button
-    var closeBtn = modal.querySelector('.modal__close');
-    if (closeBtn) {
-      closeBtn.addEventListener('click', function () {
-        closeModal(modal);
-      });
-    }
-  });
-
-  // Close modals on Escape
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      closeAllModals();
-    }
-  });
-
-  /* ==========================================
      ANIMATED COUNTERS
      ========================================== */
   var counters = document.querySelectorAll('.counter');
