@@ -1192,7 +1192,7 @@ ul {
   border-radius: var(--radius-xl);
   overflow: hidden;
   background: var(--color-white);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border: 1px solid var(--color-border);
   transition: all var(--transition-base);
 }
 
@@ -2091,6 +2091,14 @@ ul {
   justify-content: center;
   font-size: 1rem;
   font-weight: var(--font-weight-bold);
+  flex-shrink: 0;
+}
+
+.testimonial-card__avatar-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
   flex-shrink: 0;
 }
 
