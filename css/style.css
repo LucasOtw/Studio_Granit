@@ -2018,7 +2018,8 @@ ul {
 }
 
 .testimonials__google-logo {
-  margin-bottom: var(--space-sm);
+  display: block;
+  margin: 0 auto var(--space-sm);
 }
 
 .testimonials__header .section-title {
