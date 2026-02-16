@@ -936,75 +936,11 @@ ul {
   padding: var(--space-2xl) 0 calc(var(--space-2xl) + 40px);
   background: var(--color-white);
   position: relative;
-  overflow: hidden;
 }
 
 .why__grid {
   display: grid;
   gap: var(--space-lg);
-  position: relative;
-}
-
-/* Floating decorative dots */
-.why__dot {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0.3;
-  z-index: 0;
-}
-
-.why__dot--1 {
-  width: 12px;
-  height: 12px;
-  background: #0149AD;
-  top: -10px;
-  left: 8%;
-  animation: whyFloat 5s ease-in-out infinite;
-}
-
-.why__dot--2 {
-  width: 8px;
-  height: 8px;
-  background: #7c3aed;
-  top: 30%;
-  right: 3%;
-  animation: whyFloat 7s ease-in-out infinite 1s;
-}
-
-.why__dot--3 {
-  width: 16px;
-  height: 16px;
-  background: #f97316;
-  bottom: 10%;
-  left: 2%;
-  opacity: 0.2;
-  animation: whyFloat 6s ease-in-out infinite 0.5s;
-}
-
-.why__dot--4 {
-  width: 10px;
-  height: 10px;
-  background: #7c3aed;
-  top: 10%;
-  right: 15%;
-  opacity: 0.25;
-  animation: whyFloat 4.5s ease-in-out infinite 2s;
-}
-
-.why__dot--5 {
-  width: 20px;
-  height: 20px;
-  background: #0149AD;
-  bottom: -5px;
-  right: 10%;
-  opacity: 0.15;
-  animation: whyFloat 8s ease-in-out infinite 1.5s;
-}
-
-@keyframes whyFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
 }
 
 /* Cards */
