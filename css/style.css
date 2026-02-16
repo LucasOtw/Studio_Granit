@@ -604,31 +604,6 @@ ul {
   );
 }
 
-/* Warm ambient glows */
-.hero__glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  pointer-events: none;
-  z-index: 2;
-}
-
-.hero__glow--1 {
-  top: 10%;
-  right: -5%;
-  width: 500px;
-  height: 500px;
-  background: rgba(249, 115, 22, 0.12);
-}
-
-.hero__glow--2 {
-  bottom: -10%;
-  left: -10%;
-  width: 400px;
-  height: 400px;
-  background: rgba(1, 73, 173, 0.1);
-}
-
 .hero__inner {
   position: relative;
   z-index: 3;

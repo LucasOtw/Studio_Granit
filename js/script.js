@@ -181,7 +181,7 @@
      HERO PARALLAX ON MOUSE MOVE (Desktop)
      ========================================== */
   var hero = document.getElementById('hero');
-  var blobs = hero ? hero.querySelectorAll('.hero__glow') : [];
+  var blobs = [];
   var mockup = hero ? hero.querySelector('.hero__phone') : null;
   var pills = hero ? hero.querySelectorAll('.hero__pill') : [];
   var isDesktop = window.matchMedia('(min-width: 960px)');
