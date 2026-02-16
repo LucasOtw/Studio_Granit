@@ -283,7 +283,7 @@ ul {
   justify-content: center;
   gap: 0.5rem;
   max-width: 680px;
-  margin: 0 auto;
+  margin: 0 0 0 auto;
   height: 56px;
   padding: 0 1.2rem;
   border-radius: var(--radius-full);
@@ -409,7 +409,7 @@ ul {
 }
 
 .header__burger span:nth-child(1) { width: 20px; }
-.header__burger span:nth-child(2) { width: 16px; align-self: flex-end; }
+.header__burger span:nth-child(2) { width: 20px; }
 .header__burger span:nth-child(3) { width: 20px; }
 
 .header__burger.is-active span:nth-child(1) {
@@ -1779,6 +1779,10 @@ ul {
   }
 
   /* Header Desktop — show desktop nav, hide burger & mobile nav */
+  .header__bar {
+    margin: 0 auto;
+  }
+
   .header__nav--desktop {
     display: flex;
   }
