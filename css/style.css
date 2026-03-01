@@ -1532,49 +1532,25 @@ ul {
   margin: 0 auto;
 }
 
-.contact-form__group {
-  margin-bottom: var(--space-md);
-}
-
-.contact-form__label {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-dark);
-  margin-bottom: 0.4rem;
-}
-
-.contact-form__input {
-  width: 100%;
-  font-family: var(--font-main);
-  font-size: 0.95rem;
-  padding: 0.85rem 1.1rem;
+.contact__cta-box {
+  text-align: center;
+  padding: var(--space-lg);
   border: 2px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   background: var(--color-bg);
+}
+
+.contact__cta-text {
+  font-size: 1.05rem;
   color: var(--color-text);
-  transition: all var(--transition-fast);
-  outline: none;
+  margin-bottom: var(--space-md);
+  line-height: 1.6;
 }
 
-.contact-form__input::placeholder {
-  color: var(--color-text-light);
-  opacity: 0.5;
-}
-
-.contact-form__input:focus {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 4px rgba(1,73,173,0.1);
-  background: var(--color-white);
-}
-
-.contact-form__textarea {
-  resize: vertical;
-  min-height: 130px;
-}
-
-.contact-form__submit {
-  width: 100%;
+.contact__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .contact__info {
