@@ -1534,7 +1534,7 @@ ul {
 
 .contact__cta-box {
   text-align: center;
-  padding: var(--space-lg);
+  padding: var(--space-md);
   border: 2px solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-bg);
@@ -1551,6 +1551,9 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .contact__info {
@@ -1885,6 +1888,14 @@ ul {
     grid-template-columns: 1fr auto;
     align-items: start;
     max-width: 900px;
+  }
+
+  .contact__cta-box {
+    padding: var(--space-lg);
+  }
+
+  .contact__cta-btn {
+    width: auto;
   }
 
   .contact__info {
