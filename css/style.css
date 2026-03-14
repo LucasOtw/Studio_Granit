@@ -131,7 +131,7 @@ body {
 }
 
 @media (min-width: 960px) and (hover: hover) {
-  *, *::before, *::after {
+  body.has-custom-cursor, body.has-custom-cursor *, body.has-custom-cursor *::before, body.has-custom-cursor *::after {
     cursor: none !important;
   }
 }

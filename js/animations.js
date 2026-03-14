@@ -82,6 +82,7 @@ window.addEventListener('load', function () {
         });
       });
 
+      document.body.classList.add('has-custom-cursor');
       cursor.style.opacity = '1';
     }
   }
