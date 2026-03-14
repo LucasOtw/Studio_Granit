@@ -85,6 +85,137 @@ body {
   overflow-x: hidden;
 }
 
+/* ---------- CUSTOM CURSOR ---------- */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  mix-blend-mode: difference;
+}
+
+.cursor__dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease;
+}
+
+.cursor__dot--hover {
+  opacity: 0;
+}
+
+.cursor__ring {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+}
+
+.cursor__ring--hover {
+  width: 60px;
+  height: 60px;
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Hide custom cursor on touch devices */
+@media (hover: none) {
+  .cursor { display: none; }
+}
+
+@media (min-width: 960px) and (hover: hover) {
+  body { cursor: none; }
+  a, button, .btn, summary { cursor: none; }
+}
+
+/* ---------- FLOATING SHAPES ---------- */
+.floating-shapes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-shape {
+  position: absolute;
+  opacity: 0.07;
+}
+
+.floating-shape--circle {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+}
+
+.floating-shape--cross {
+  width: 20px;
+  height: 20px;
+}
+
+.floating-shape--cross::before,
+.floating-shape--cross::after {
+  content: '';
+  position: absolute;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+
+.floating-shape--cross::before {
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.floating-shape--cross::after {
+  width: 2px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.floating-shape--dot {
+  width: 10px;
+  height: 10px;
+  background: var(--color-primary);
+  border-radius: 50%;
+}
+
+/* ---------- SPLIT TEXT WORD ---------- */
+.word {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.word-inner {
+  display: inline-block;
+}
+
+/* Ensure sections have z-index above floating shapes */
+.features .container,
+.process .container,
+.pricing .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .cursor { display: none !important; }
+  .floating-shapes { display: none !important; }
+}
+
 img {
   max-width: 100%;
   height: auto;
