@@ -79,16 +79,33 @@
   /* ==========================================
      HEADER SCROLL EFFECT
      ========================================== */
+  var backToTop = document.getElementById('back-to-top');
+
   function onScroll() {
     if (window.scrollY > 10) {
       header.classList.add('header--scrolled');
     } else {
       header.classList.remove('header--scrolled');
     }
+
+    // Back to top visibility
+    if (backToTop) {
+      if (window.scrollY > 600) {
+        backToTop.classList.add('is-visible');
+      } else {
+        backToTop.classList.remove('is-visible');
+      }
+    }
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  if (backToTop) {
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   /* ==========================================
      SMOOTH SCROLL

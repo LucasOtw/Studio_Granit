@@ -1875,6 +1875,42 @@ ul {
 /* ============================================
    WHATSAPP FAB
    ============================================ */
+/* Back to top */
+.back-to-top {
+  position: fixed;
+  bottom: 6.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 12px rgba(1, 73, 173, 0.3);
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@media (hover: hover) {
+  .back-to-top:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+  }
+}
+
 .whatsapp-fab {
   position: fixed;
   bottom: 1.5rem;
