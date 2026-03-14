@@ -277,20 +277,6 @@ window.addEventListener('load', function () {
     });
   }
 
-  /* ==========================================
-     WAVE PARALLAX ON SCROLL
-     ========================================== */
-  gsap.utils.toArray('.wave').forEach(function (wave) {
-    gsap.to(wave, {
-      y: -20,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: wave,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true
-      }
-    });
-  });
+  /* Wave parallax removed — causes visible gaps between sections */
 
 });

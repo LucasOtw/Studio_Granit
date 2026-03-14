@@ -132,8 +132,12 @@ body {
 }
 
 @media (min-width: 960px) and (hover: hover) {
-  body { cursor: none; }
-  a, button, .btn, summary { cursor: none; }
+  body, a, button, .btn, summary, input, textarea, select, label,
+  [role="button"], [onclick], .header__link, .footer__social-link,
+  .sectors__arrow, .pricing-card__cta, .contact__cta-btn,
+  .mobile-nav__link, .mobile-nav__cta, .back-to-top, .whatsapp-fab {
+    cursor: none !important;
+  }
 }
 
 /* ---------- FLOATING SHAPES ---------- */
@@ -254,11 +258,12 @@ ul {
    ============================================ */
 .wave {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   width: 100%;
   line-height: 0;
   pointer-events: none;
+  z-index: 2;
 }
 
 .wave svg {
