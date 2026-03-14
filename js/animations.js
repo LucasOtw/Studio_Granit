@@ -51,4 +51,39 @@ window.addEventListener('load', function () {
     });
   }
 
+  /* ==========================================
+     CUSTOM CURSOR (Desktop only)
+     ========================================== */
+  var isDesktop = window.matchMedia('(min-width: 960px)');
+
+  if (isDesktop.matches) {
+    var cursor = document.getElementById('cursor');
+    if (cursor) {
+      var cursorDot = cursor.querySelector('.cursor__dot');
+      var cursorRing = cursor.querySelector('.cursor__ring');
+
+      var xTo = gsap.quickTo(cursor, 'x', { duration: 0.15, ease: 'power2.out' });
+      var yTo = gsap.quickTo(cursor, 'y', { duration: 0.15, ease: 'power2.out' });
+
+      document.addEventListener('mousemove', function (e) {
+        xTo(e.clientX);
+        yTo(e.clientY);
+      });
+
+      var interactives = document.querySelectorAll('a, button, .btn, .faq-item summary');
+      interactives.forEach(function (el) {
+        el.addEventListener('mouseenter', function () {
+          cursorRing.classList.add('cursor__ring--hover');
+          cursorDot.classList.add('cursor__dot--hover');
+        });
+        el.addEventListener('mouseleave', function () {
+          cursorRing.classList.remove('cursor__ring--hover');
+          cursorDot.classList.remove('cursor__dot--hover');
+        });
+      });
+
+      cursor.style.opacity = '1';
+    }
+  }
+
 });
