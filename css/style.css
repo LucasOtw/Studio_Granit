@@ -925,6 +925,7 @@ ul {
 }
 
 .feature-card__text {
+  display: none;
   color: var(--color-text-light);
   font-size: 0.75rem;
   line-height: 1.6;
@@ -1949,6 +1950,7 @@ ul {
   }
 
   .feature-card__text {
+    display: block;
     font-size: 0.95rem;
   }
 
