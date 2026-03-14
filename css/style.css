@@ -1305,6 +1305,64 @@ ul {
 }
 
 /* ============================================
+   PROCESS — Comment ça marche
+   ============================================ */
+.process {
+  padding: var(--space-2xl) 0 calc(var(--space-2xl) + 40px);
+  background: var(--color-white);
+  position: relative;
+}
+
+.process__grid {
+  display: grid;
+  gap: var(--space-lg);
+  max-width: 900px;
+  margin: var(--space-lg) auto 0;
+}
+
+.process__step {
+  text-align: center;
+  padding: var(--space-md);
+}
+
+.process__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-sm);
+}
+
+.process__title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.process__text {
+  font-size: 0.92rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .process__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================
    TEAM
    ============================================ */
 .team {
@@ -1403,6 +1461,14 @@ ul {
   padding: var(--space-2xl) 0 calc(var(--space-2xl) + 40px);
   background: var(--color-white);
   position: relative;
+}
+
+.pricing__trust {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--color-granite);
+  margin-bottom: var(--space-md);
+  font-style: italic;
 }
 
 .pricing__grid {
