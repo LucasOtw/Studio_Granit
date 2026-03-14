@@ -1162,10 +1162,12 @@ ul {
 }
 
 .showcase__cite {
+  display: block;
   font-size: 0.85rem;
   color: var(--color-granite);
   font-style: normal;
   font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-md);
 }
 
 /* ============================================
