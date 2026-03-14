@@ -2414,6 +2414,7 @@ ul {
 .legal {
   padding: calc(68px + var(--space-xl)) 0 var(--space-3xl);
   min-height: 100vh;
+  background: var(--color-white);
 }
 
 .legal h1 {
