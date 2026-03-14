@@ -191,17 +191,6 @@ body {
   border-radius: 50%;
 }
 
-/* ---------- SPLIT TEXT WORD ---------- */
-.word {
-  overflow: hidden;
-  display: inline-block;
-  vertical-align: top;
-}
-
-.word-inner {
-  display: inline-block;
-}
-
 /* Ensure sections have z-index above floating shapes */
 .features .container,
 .process .container,
