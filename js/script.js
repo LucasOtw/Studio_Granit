@@ -80,12 +80,17 @@
      HEADER SCROLL EFFECT
      ========================================== */
   var backToTop = document.getElementById('back-to-top');
+  var topbar = document.querySelector('.topbar');
 
   function onScroll() {
     if (window.scrollY > 10) {
       header.classList.add('header--scrolled');
+      if (topbar) topbar.classList.add('topbar--hidden');
+      header.style.top = '0';
     } else {
       header.classList.remove('header--scrolled');
+      if (topbar) topbar.classList.remove('topbar--hidden');
+      header.style.top = '';
     }
 
     // Back to top visibility

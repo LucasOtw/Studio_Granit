@@ -71,7 +71,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 110px;
 }
 
 body {
@@ -320,9 +320,37 @@ ul {
 /* ============================================
    HEADER — Floating glassmorphism pill
    ============================================ */
-.header {
+/* ---------- TOP BAR ---------- */
+.topbar {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  background: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+  padding: 0.35rem 1rem;
+  font-size: 0.78rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.02em;
+}
+
+.topbar__text {
+  margin: 0;
+}
+
+.topbar--hidden {
+  transform: translateY(-100%);
+}
+
+.topbar {
+  transition: transform 0.3s ease;
+}
+
+.header {
+  position: fixed;
+  top: 28px;
   left: 0;
   right: 0;
   z-index: 1000;
