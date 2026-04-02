@@ -7,7 +7,7 @@
   'use strict';
 
   var GA_MEASUREMENT_ID = 'G-GWC2R2C9G1';
-  var CLARITY_PROJECT_ID = 'XXXXXXXXXX';     // TODO: remplacer par ton ID Microsoft Clarity
+  var CLARITY_PROJECT_ID = 'w5hywjna6e';
 
   var STORAGE_KEY = 'cookie-consent';
   var banner = document.getElementById('cookie-banner');
