@@ -1,49 +1,12 @@
 /* ============================================
    STUDIO GRANIT — animations.js
-   Vanilla JS · IntersectionObserver · Minimal
+   Vanilla JS · Custom Cursor only
    ============================================ */
 
 (function () {
   'use strict';
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  /* ==========================================
-     WHY CARD ICONS — Spin in when visible
-     ========================================== */
-  var whyIcons = document.querySelectorAll('.why-card__icon');
-
-  if ('IntersectionObserver' in window && whyIcons.length > 0) {
-    var iconObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-animated');
-        iconObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.3 });
-
-    whyIcons.forEach(function (icon) { iconObserver.observe(icon); });
-  }
-
-  /* ==========================================
-     SHOWCASE — Avant/Après slide from sides
-     ========================================== */
-  var showcaseGrid = document.querySelector('.showcase__grid');
-  var showcaseBefore = document.querySelector('.showcase__col--before');
-  var showcaseAfter = document.querySelector('.showcase__col--after');
-
-  if (showcaseGrid && showcaseBefore && showcaseAfter && 'IntersectionObserver' in window) {
-    var showcaseObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        showcaseBefore.classList.add('is-animated');
-        showcaseAfter.classList.add('is-animated');
-        showcaseObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.15 });
-
-    showcaseObserver.observe(showcaseGrid);
-  }
 
   /* ==========================================
      CUSTOM CURSOR (Desktop only)
