@@ -85,6 +85,26 @@ body {
   overflow-x: hidden;
 }
 
+/* ---------- SKIP LINK ---------- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-md);
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.875rem;
+  z-index: 10000;
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--space-sm);
+}
+
 /* ---------- CUSTOM CURSOR ---------- */
 .cursor {
   position: fixed;
@@ -1335,6 +1355,21 @@ ul {
   font-size: 0.85rem;
   color: var(--color-text-light);
   line-height: 1.5;
+}
+
+.sector-card__cta {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.sector-card__cta:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
 }
 
 .sectors__controls {
