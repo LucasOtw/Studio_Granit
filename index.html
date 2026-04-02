@@ -31,7 +31,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
 
   <link rel="preload" as="image" type="image/webp" href="img/hero-showcase.webp">
 
@@ -215,7 +217,10 @@
   <header class="header" id="header">
     <div class="header__bar">
       <a href="/" class="header__logo" aria-label="Studio Granit — Accueil">
-        <img src="img/Logo.png" alt="Studio Granit" class="header__logo-img" width="140" height="140">
+        <picture>
+          <source srcset="img/Logo.webp" type="image/webp">
+          <img src="img/Logo.png" alt="Studio Granit" class="header__logo-img" width="140" height="140">
+        </picture>
       </a>
 
       <nav class="header__nav header__nav--desktop" aria-label="Navigation principale">
@@ -654,7 +659,10 @@
 
           <article class="team-card" data-reveal>
             <div class="team-card__img">
-              <img src="img/Youenn.jpeg" alt="Youenn, co-fondateur de Studio Granit" width="160" height="160" loading="lazy">
+              <picture>
+                <source srcset="img/Youenn.webp" type="image/webp">
+                <img src="img/Youenn.jpeg" alt="Youenn, co-fondateur de Studio Granit" width="160" height="160" loading="lazy">
+              </picture>
             </div>
             <h3 class="team-card__name">Youenn</h3>
             <p class="team-card__role">Co-fondateur &middot; Lannion</p>
@@ -663,7 +671,10 @@
 
           <article class="team-card" data-reveal>
             <div class="team-card__img">
-              <img src="img/Lucas.jpeg" alt="Lucas, co-fondateur de Studio Granit" width="160" height="160" loading="lazy">
+              <picture>
+                <source srcset="img/Lucas.webp" type="image/webp">
+                <img src="img/Lucas.jpeg" alt="Lucas, co-fondateur de Studio Granit" width="160" height="160" loading="lazy">
+              </picture>
             </div>
             <h3 class="team-card__name">Lucas</h3>
             <p class="team-card__role">Co-fondateur &middot; Lannion</p>
@@ -896,7 +907,10 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <img src="img/Logo.png" alt="Studio Granit" class="footer__logo-img" width="140" height="140">
+        <picture>
+          <source srcset="img/Logo.webp" type="image/webp">
+          <img src="img/Logo.png" alt="Studio Granit" class="footer__logo-img" width="140" height="140">
+        </picture>
         <p class="footer__tagline">Du web taillé pour durer.</p>
       </div>
       <nav class="footer__links" aria-label="Liens du pied de page">
@@ -934,8 +948,6 @@
   </a>
 
   <script src="js/script.js" defer></script>
-  <script src="js/vendor/gsap.min.js" defer></script>
-  <script src="js/vendor/ScrollTrigger.min.js" defer></script>
   <script src="js/animations.js" defer></script>
 </body>
 </html>
