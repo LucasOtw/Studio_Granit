@@ -72,6 +72,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 110px;
+  overflow-x: hidden;
 }
 
 body {
@@ -333,8 +334,15 @@ ul {
 }
 
 .btn--lg {
-  padding: 0.95rem 2.4rem;
-  font-size: 1.05rem;
+  padding: 0.95rem 1.6rem;
+  font-size: 1rem;
+}
+
+@media (min-width: 640px) {
+  .btn--lg {
+    padding: 0.95rem 2.4rem;
+    font-size: 1.05rem;
+  }
 }
 
 /* ============================================
@@ -354,18 +362,18 @@ ul {
   font-size: 0.78rem;
   font-weight: var(--font-weight-medium);
   letter-spacing: 0.02em;
+  transition: transform 0.3s ease;
 }
 
 .topbar__text {
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .topbar--hidden {
   transform: translateY(-100%);
-}
-
-.topbar {
-  transition: transform 0.3s ease;
 }
 
 .header {
@@ -686,8 +694,8 @@ ul {
 .hero__blob--1 {
   top: -10%;
   right: -5%;
-  width: 500px;
-  height: 500px;
+  width: min(500px, 80vw);
+  height: min(500px, 80vw);
   background: rgba(27, 94, 122, 0.07);
   animation: blobFloat1 8s ease-in-out infinite;
 }
@@ -695,8 +703,8 @@ ul {
 .hero__blob--2 {
   bottom: -15%;
   left: -10%;
-  width: 400px;
-  height: 400px;
+  width: min(400px, 70vw);
+  height: min(400px, 70vw);
   background: rgba(193, 127, 62, 0.05);
   animation: blobFloat2 10s ease-in-out infinite;
 }
@@ -704,8 +712,8 @@ ul {
 .hero__blob--3 {
   top: 30%;
   left: 50%;
-  width: 300px;
-  height: 300px;
+  width: min(300px, 60vw);
+  height: min(300px, 60vw);
   background: rgba(42, 122, 140, 0.04);
   animation: blobFloat3 12s ease-in-out infinite;
 }
@@ -926,7 +934,7 @@ ul {
 
 .hero__pill--2 {
   top: 40%;
-  left: -0.5rem;
+  left: 0;
   animation: pillAppear 0.5s ease forwards 0.5s, pillFloat2 5.5s ease-in-out infinite 1s;
 }
 
@@ -937,7 +945,7 @@ ul {
 }
 
 .hero__pill--4 {
-  bottom: -0.5rem;
+  bottom: 0;
   left: 0.5rem;
   animation: pillAppear 0.5s ease forwards 0.9s, pillFloat4 5.2s ease-in-out infinite 1.4s;
 }
@@ -952,8 +960,8 @@ ul {
 
 .features__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-xs);
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
 }
 
 .feature-card {
@@ -1018,16 +1026,15 @@ ul {
 
 .feature-card__title {
   font-family: var(--font-heading);
-  font-size: 0.8rem;
+  font-size: 1.05rem;
   font-weight: var(--font-weight-bold);
   color: var(--color-dark);
-  margin-bottom: 2px;
+  margin-bottom: 0.25rem;
 }
 
 .feature-card__text {
-  display: none;
   color: var(--color-text-light);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   line-height: 1.6;
   position: relative;
   z-index: 1;
@@ -1305,7 +1312,7 @@ ul {
 }
 
 .sector-card {
-  flex: 0 0 280px;
+  flex: 0 0 min(280px, 85vw);
   scroll-snap-align: start;
   border-radius: var(--radius-xl);
   overflow: hidden;
@@ -1489,7 +1496,7 @@ ul {
 
 .team__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: var(--space-lg);
   max-width: 520px;
   margin: 0 auto;
@@ -2124,6 +2131,10 @@ ul {
 
   .testimonials__grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .team__grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .team-card__img {
