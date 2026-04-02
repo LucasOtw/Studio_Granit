@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  var GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';   // TODO: remplacer par ton ID Google Analytics
+  var GA_MEASUREMENT_ID = 'G-GWC2R2C9G1';
   var CLARITY_PROJECT_ID = 'XXXXXXXXXX';     // TODO: remplacer par ton ID Microsoft Clarity
 
   var STORAGE_KEY = 'cookie-consent';
