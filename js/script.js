@@ -144,7 +144,7 @@
         var el = entry.target;
 
         // Stagger children if the element contains a grid
-        var grid = el.querySelector('.features__grid, .sectors__track, .pricing__grid, .team__grid, .faq__list, .testimonials__grid');
+        var grid = el.querySelector('.features__grid, .pricing__grid, .team__grid, .faq__list, .testimonials__grid');
         if (grid) {
           staggerChildren(grid);
         }
@@ -291,25 +291,6 @@
       destroyHeroParallax();
     }
   });
-
-  /* ==========================================
-     SECTORS CAROUSEL
-     ========================================== */
-  var sectorsTrack = document.getElementById('sectors-track');
-  var prevBtn = document.getElementById('sectors-prev');
-  var nextBtn = document.getElementById('sectors-next');
-
-  if (sectorsTrack && prevBtn && nextBtn) {
-    var scrollAmount = 340;
-
-    nextBtn.addEventListener('click', function () {
-      sectorsTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    });
-
-    prevBtn.addEventListener('click', function () {
-      sectorsTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    });
-  }
 
   /* ==========================================
      ANIMATED COUNTERS
