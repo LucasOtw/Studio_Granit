@@ -218,7 +218,8 @@
 
       <nav class="header__nav header__nav--desktop" aria-label="Navigation principale">
         <ul class="header__menu">
-          <li><a href="#realisations" class="header__link">Nos secteurs</a></li>
+          <li><a href="#realisations" class="header__link">Réalisations</a></li>
+          <li><a href="#secteurs" class="header__link">Nos secteurs</a></li>
           <li><a href="#equipe" class="header__link">L'Équipe</a></li>
           <li><a href="#tarifs" class="header__link">Tarifs</a></li>
           <li><a href="#contact" class="header__link">Contact</a></li>
@@ -239,7 +240,8 @@
       <div class="mobile-nav__backdrop"></div>
       <div class="mobile-nav__panel">
         <ul class="mobile-nav__menu">
-          <li class="mobile-nav__item"><a href="#realisations" class="mobile-nav__link">Nos secteurs</a></li>
+          <li class="mobile-nav__item"><a href="#realisations" class="mobile-nav__link">Réalisations</a></li>
+          <li class="mobile-nav__item"><a href="#secteurs" class="mobile-nav__link">Nos secteurs</a></li>
           <li class="mobile-nav__item"><a href="#equipe" class="mobile-nav__link">L'Équipe</a></li>
           <li class="mobile-nav__item"><a href="#tarifs" class="mobile-nav__link">Tarifs</a></li>
           <li class="mobile-nav__item"><a href="#contact" class="mobile-nav__link">Contact</a></li>
@@ -475,10 +477,77 @@
           <a href="mailto:studiogranit.pro@gmail.com?subject=Demande%20de%20devis%20%E2%80%94%20Studio%20Granit" class="btn btn--primary">On fait le vôtre ?</a>
         </div>
       </div>
+
+      <!-- Wave divider -->
+      <div class="wave wave--showcase" aria-hidden="true">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <path d="M0,40 C360,100 720,0 1080,60 C1260,90 1380,50 1440,40 L1440,100 L0,100 Z" fill="var(--color-bg)"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ========== RÉALISATIONS CLIENTS ========== -->
+    <section class="realisations" id="realisations">
+      <div class="container">
+        <span class="realisations__eyebrow" data-reveal>Du concret</span>
+        <h2 class="section-title" data-reveal>Nos derniers chantiers</h2>
+        <p class="section-subtitle" data-reveal>Des sites livrés, en ligne, qui tournent. Voilà ce qu'on sait faire — pas en théorie, en vrai.</p>
+
+        <div class="realisations__list">
+
+          <article class="realisation-card" data-reveal>
+            <a href="https://dhomesecurite-kr0k66s0e-lucas-torres-projects-88e9b957.vercel.app/" target="_blank" rel="noopener noreferrer" class="realisation-card__visual" aria-label="Voir le site D'Home Sécurité 56">
+              <div class="realisation-card__mockup">
+                <div class="realisation-card__bar">
+                  <span class="hero__mockup-dot hero__mockup-dot--red"></span>
+                  <span class="hero__mockup-dot hero__mockup-dot--yellow"></span>
+                  <span class="hero__mockup-dot hero__mockup-dot--green"></span>
+                  <span class="realisation-card__url">dhomesecurite56.fr</span>
+                </div>
+                <div class="realisation-card__screen">
+                  <picture>
+                    <source srcset="img/realisation-dhome-securite.webp" type="image/webp">
+                    <img src="img/realisation-dhome-securite.png" alt="Page d'accueil du site D'Home Sécurité 56 — serrurier à Vannes" width="1440" height="900" loading="lazy">
+                  </picture>
+                </div>
+              </div>
+            </a>
+
+            <div class="realisation-card__body">
+              <span class="realisation-card__sector">Serrurerie · Sécurisation</span>
+              <h3 class="realisation-card__name">D'Home Sécurité 56</h3>
+              <p class="realisation-card__location">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+                Vannes &middot; Morbihan
+              </p>
+              <p class="realisation-card__desc">Serrurier-dépanneur spécialisé en protection de l'habitat. Un site sombre, impactant, pensé pour rassurer le client en pleine urgence et déclencher l'appel.</p>
+              <ul class="realisation-card__highlights">
+                <li>Devis en un clic, appel direct</li>
+                <li>SEO local Vannes &amp; presqu'île de Rhuys</li>
+                <li>Design dark moderne, mobile first</li>
+              </ul>
+              <a href="https://dhomesecurite-kr0k66s0e-lucas-torres-projects-88e9b957.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn--outline realisation-card__cta">
+                Voir le site en ligne
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="realisations__note" data-reveal>D'autres réalisations arrivent. Le prochain site exposé ici, ça pourrait être le vôtre.</p>
+      </div>
+
+      <!-- Wave divider -->
+      <div class="wave wave--realisations" aria-hidden="true">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <path d="M0,60 C320,0 720,100 1080,40 C1260,10 1380,50 1440,60 L1440,100 L0,100 Z" fill="var(--color-white)"/>
+        </svg>
+      </div>
     </section>
 
     <!-- ========== SECTEURS ========== -->
-    <section class="sectors" id="realisations">
+    <section class="sectors" id="secteurs">
       <div class="container">
         <h2 class="section-title" data-reveal>On bosse avec des gens comme vous</h2>
         <p class="section-subtitle" data-reveal>Restaurateurs, artisans, garagistes… Des pros qui n'ont pas le temps de s'occuper d'un site, mais qui en ont besoin.</p>
@@ -907,7 +976,8 @@
         <p class="footer__tagline">Du web taillé pour durer.</p>
       </div>
       <nav class="footer__links" aria-label="Liens du pied de page">
-        <a href="#realisations">Nos secteurs</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#secteurs">Nos secteurs</a>
         <a href="#equipe">L'Équipe</a>
         <a href="#tarifs">Tarifs</a>
         <a href="#contact">Contact</a>
