@@ -35,7 +35,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
 
-  <link rel="preload" as="image" type="image/webp" href="img/hero-showcase.webp">
+  <link rel="preload" as="image" type="image/webp"
+        imagesrcset="img/hero-showcase-480.webp 480w, img/hero-showcase.webp 900w"
+        imagesizes="(max-width: 600px) 100vw, 900px">
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -279,8 +281,16 @@
             </div>
             <div class="hero__mockup-screen">
               <picture>
-                <source srcset="img/hero-showcase.webp" type="image/webp">
-                <img src="img/hero-showcase-real.jpg" alt="Exemple de site vitrine créé par Studio Granit" width="900" height="710" loading="eager" fetchpriority="high">
+                <source
+                  type="image/webp"
+                  srcset="img/hero-showcase-480.webp 480w, img/hero-showcase.webp 900w"
+                  sizes="(max-width: 600px) 100vw, 900px">
+                <img
+                  src="img/hero-showcase-real-900.jpg"
+                  srcset="img/hero-showcase-real-480.jpg 480w, img/hero-showcase-real-900.jpg 900w"
+                  sizes="(max-width: 600px) 100vw, 900px"
+                  alt="Exemple de site vitrine créé par Studio Granit"
+                  width="900" height="710" loading="eager" fetchpriority="high">
               </picture>
             </div>
           </div>
@@ -504,8 +514,16 @@
                 </div>
                 <div class="realisation-card__screen">
                   <picture>
-                    <source srcset="img/realisation-dhome-securite.webp" type="image/webp">
-                    <img src="img/realisation-dhome-securite.png" alt="Page d'accueil du site D'Home Sécurité 56 — serrurier à Vannes" width="1440" height="900" loading="lazy">
+                    <source
+                      type="image/webp"
+                      srcset="img/realisation-dhome-securite-720.webp 720w, img/realisation-dhome-securite.webp 1440w"
+                      sizes="(max-width: 600px) 100vw, 1440px">
+                    <img
+                      src="img/realisation-dhome-securite.png"
+                      srcset="img/realisation-dhome-securite-720.png 720w, img/realisation-dhome-securite.png 1440w"
+                      sizes="(max-width: 600px) 100vw, 1440px"
+                      alt="Page d'accueil du site D'Home Sécurité 56 — serrurier à Vannes"
+                      width="1440" height="900" loading="lazy">
                   </picture>
                 </div>
               </div>
