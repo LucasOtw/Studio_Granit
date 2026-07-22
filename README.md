@@ -14,11 +14,11 @@
 
 **Studio Granit**, c'est une agence web fondée par deux développeurs bretons, **Youenn** et **Lucas**, basée entre Lannion et Nantes.
 
-Notre métier : concevoir des **sites web statiques, ultra-rapides et robustes** pour les restaurateurs. Pas de CMS lourd, pas de base de données, pas de superflu — juste du code solide, performant et écologique.
+Notre métier : concevoir des **sites web statiques, ultra-rapides et robustes** pour les petits commerçants, artisans, garagistes et toutes les entreprises de proximité. Pas de CMS lourd, pas de base de données, pas de superflu — juste du code solide, performant et écologique.
 
 Comme le granit breton, nos sites sont **taillés pour durer**.
 
-🍽️ *Nos clients sont des restaurateurs qui veulent une vitrine en ligne efficace, pas une usine à gaz.*
+🛠️ *Nos clients sont des commerçants, artisans et indépendants qui veulent une vitrine en ligne efficace, pas une usine à gaz.*
 
 ---
 
@@ -30,7 +30,7 @@ Comme le granit breton, nos sites sont **taillés pour durer**.
 - 🔍 **SEO Friendly** — Balisage sémantique, métadonnées optimisées, données structurées
 - 🔒 **Sécurité maximale** — Pas de base de données, pas de faille côté serveur
 - 🌱 **Éco-conception** — Pages légères, empreinte carbone minimale
-- 🎨 **Design sur-mesure** — Chaque site reflète l'identité du restaurant
+- 🎨 **Design sur-mesure** — Chaque site reflète l'identité de l'entreprise
 
 ---
 

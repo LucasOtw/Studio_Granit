@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Studio Granit is a static website for a Breton web agency (Lannion/Nantes) that builds fast, robust static sites for restaurants. Founded by Youenn and Lucas.
+Studio Granit is a static website for a Breton web agency (Lannion/Nantes) that builds fast, robust static sites for small local businesses (commerçants, artisans, garagistes, restaurateurs…). Founded by Youenn and Lucas.
 
 Philosophy: "Du web taillé pour durer" — solid code, no bloat, performant, eco-friendly.
 
