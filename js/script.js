@@ -144,7 +144,7 @@
         var el = entry.target;
 
         // Stagger children if the element contains a grid
-        var grid = el.querySelector('.features__grid, .pricing__grid, .team__grid, .faq__list, .testimonials__grid');
+        var grid = el.querySelector('.features__grid, .pricing__grid, .team__grid, .faq__list');
         if (grid) {
           staggerChildren(grid);
         }
@@ -291,49 +291,5 @@
       destroyHeroParallax();
     }
   });
-
-  /* ==========================================
-     ANIMATED COUNTERS
-     ========================================== */
-  var counters = document.querySelectorAll('.counter');
-
-  function animateCounter(el) {
-    var target = parseInt(el.getAttribute('data-count'), 10);
-    var numberEl = el.querySelector('.counter__number');
-    if (!numberEl || isNaN(target)) return;
-
-    var current = 0;
-    var duration = 1500;
-    var step = Math.max(1, Math.floor(duration / target));
-
-    function tick() {
-      current++;
-      numberEl.textContent = current;
-      if (current < target) {
-        setTimeout(tick, step);
-      }
-    }
-    tick();
-  }
-
-  if ('IntersectionObserver' in window && counters.length > 0) {
-    var counterObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var counterEls = entry.target.querySelectorAll('.counter');
-        counterEls.forEach(function (c) {
-          animateCounter(c);
-        });
-        counterObserver.unobserve(entry.target);
-      });
-    }, {
-      threshold: 0.3
-    });
-
-    var countersContainer = document.querySelector('.testimonials__counters');
-    if (countersContainer) {
-      counterObserver.observe(countersContainer);
-    }
-  }
 
 })();

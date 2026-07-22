@@ -11,13 +11,13 @@
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
-  <link rel="canonical" href="https://studio-granit.fr/mentions-legales.html">
+  <link rel="canonical" href="https://studio-granit.fr/mentions-legales">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Mentions Légales | Studio Granit">
   <meta property="og:description" content="Mentions légales, éditeur et hébergeur du site Studio Granit — Agence web pour entreprises à Lannion, Bretagne.">
-  <meta property="og:url" content="https://studio-granit.fr/mentions-legales.html">
+  <meta property="og:url" content="https://studio-granit.fr/mentions-legales">
   <meta property="og:image" content="https://studio-granit.fr/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -33,25 +33,32 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet"></noscript>
 
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
   <!-- ========== HEADER SIMPLIFIÉ ========== -->
   <header class="header" id="header">
     <div class="header__bar">
-      <a href="index.html" class="header__logo" aria-label="Studio Granit — Accueil">
-        <img src="img/Logo.png" alt="Studio Granit" class="header__logo-img" width="140" height="140">
+      <a href="/" class="header__logo" aria-label="Studio Granit — Accueil">
+        <picture>
+          <source srcset="img/Logo.webp" type="image/webp">
+          <img src="img/Logo.png" alt="Studio Granit" class="header__logo-img" width="140" height="140">
+        </picture>
       </a>
 
       <nav class="header__nav header__nav--desktop" aria-label="Navigation principale">
         <ul class="header__menu">
-          <li><a href="index.html" class="header__link">Accueil</a></li>
-          <li><a href="index.html#realisations" class="header__link">Nos secteurs</a></li>
-          <li><a href="index.html#tarifs" class="header__link">Tarifs</a></li>
-          <li><a href="index.html#contact" class="header__link">Contact</a></li>
+          <li><a href="/" class="header__link">Accueil</a></li>
+          <li><a href="/#realisations" class="header__link">Réalisations</a></li>
+          <li><a href="/#tarifs" class="header__link">Tarifs</a></li>
+          <li><a href="/#contact" class="header__link">Contact</a></li>
         </ul>
       </nav>
 
@@ -68,10 +75,10 @@
       <div class="mobile-nav__backdrop"></div>
       <div class="mobile-nav__panel">
         <ul class="mobile-nav__menu">
-          <li class="mobile-nav__item"><a href="index.html" class="mobile-nav__link">Accueil</a></li>
-          <li class="mobile-nav__item"><a href="index.html#realisations" class="mobile-nav__link">Nos secteurs</a></li>
-          <li class="mobile-nav__item"><a href="index.html#tarifs" class="mobile-nav__link">Tarifs</a></li>
-          <li class="mobile-nav__item"><a href="index.html#contact" class="mobile-nav__link">Contact</a></li>
+          <li class="mobile-nav__item"><a href="/" class="mobile-nav__link">Accueil</a></li>
+          <li class="mobile-nav__item"><a href="/#realisations" class="mobile-nav__link">Réalisations</a></li>
+          <li class="mobile-nav__item"><a href="/#tarifs" class="mobile-nav__link">Tarifs</a></li>
+          <li class="mobile-nav__item"><a href="/#contact" class="mobile-nav__link">Contact</a></li>
         </ul>
         <a href="mailto:studiogranit.pro@gmail.com?subject=Demande%20de%20devis%20%E2%80%94%20Studio%20Granit" class="btn btn--primary btn--lg mobile-nav__cta">Devis Gratuit</a>
         <p class="mobile-nav__tagline">Du web taillé pour durer.</p>
@@ -79,9 +86,9 @@
     </nav>
   </header>
 
-  <main class="legal">
+  <main class="legal" id="main-content">
     <div class="container">
-      <a href="index.html" class="legal__back">
+      <a href="/" class="legal__back">
         <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true"><path d="M13 4l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Retour à l'accueil
       </a>
@@ -100,10 +107,10 @@
 
       <h2>Hébergeur</h2>
       <p>
-        <strong>OVHcloud</strong><br>
-        2 rue Kellermann<br>
-        59100 Roubaix, France<br>
-        Site web : <a href="https://www.ovhcloud.com" target="_blank" rel="noopener noreferrer">ovhcloud.com</a>
+        <strong>Vercel Inc.</strong><br>
+        440 N Barranca Ave #4133<br>
+        Covina, CA 91723, États-Unis<br>
+        Site web : <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">vercel.com</a>
       </p>
 
       <h2>Propriété intellectuelle</h2>
@@ -139,7 +146,7 @@
         Vous pouvez refuser ces cookies via la bannière de consentement. Votre choix est enregistré localement et respecté lors de vos prochaines visites. Aucune donnée n'est collectée si vous refusez.
       </p>
       <p>
-        Des cookies techniques strictement nécessaires peuvent être utilisés par l'hébergeur (OVH) pour assurer le bon fonctionnement du site. Ces cookies ne nécessitent pas de consentement conformément à la réglementation en vigueur.
+        Des cookies techniques strictement nécessaires peuvent être utilisés par l'hébergeur (Vercel) pour assurer le bon fonctionnement du site. Ces cookies ne nécessitent pas de consentement conformément à la réglementation en vigueur.
       </p>
 
       <h2>Responsabilité</h2>
@@ -153,15 +160,18 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <img src="img/Logo.png" alt="Studio Granit" class="footer__logo-img" width="140" height="140">
+        <picture>
+          <source srcset="img/Logo.webp" type="image/webp">
+          <img src="img/Logo.png" alt="Studio Granit" class="footer__logo-img" width="140" height="140">
+        </picture>
         <p class="footer__tagline">Du web taillé pour durer.</p>
       </div>
       <nav class="footer__links" aria-label="Liens du pied de page">
-        <a href="index.html#realisations">Nos secteurs</a>
-        <a href="index.html#equipe">L'Équipe</a>
-        <a href="index.html#tarifs">Tarifs</a>
-        <a href="index.html#contact">Contact</a>
-        <a href="mentions-legales.html" aria-current="page">Mentions légales</a>
+        <a href="/#realisations">Réalisations</a>
+        <a href="/#equipe">L'Équipe</a>
+        <a href="/#tarifs">Tarifs</a>
+        <a href="/#contact">Contact</a>
+        <a href="/mentions-legales" aria-current="page">Mentions légales</a>
       </nav>
       <div class="footer__social">
         <a href="https://www.instagram.com/studiogranitbzh/" aria-label="Instagram" class="footer__social-link" target="_blank" rel="noopener noreferrer">
@@ -175,7 +185,7 @@
   <!-- ========== COOKIE CONSENT ========== -->
   <div class="cookie-banner" id="cookie-banner" hidden>
     <div class="cookie-banner__inner">
-      <p class="cookie-banner__text">Ce site utilise des cookies pour mesurer l'audience et améliorer votre expérience. <a href="mentions-legales.html#cookies">En savoir plus</a></p>
+      <p class="cookie-banner__text">Ce site utilise des cookies pour mesurer l'audience et améliorer votre expérience. <a href="/mentions-legales#cookies">En savoir plus</a></p>
       <div class="cookie-banner__actions">
         <button class="cookie-banner__refuse">Refuser</button>
         <button class="cookie-banner__accept">Accepter</button>
@@ -184,6 +194,6 @@
   </div>
 
   <script src="js/cookie-consent.js" defer></script>
-  <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>
