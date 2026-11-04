@@ -13,7 +13,7 @@ Philosophy: "Du web taillé pour durer" — solid code, no bloat, performant, ec
 - **HTML5** — Semantic markup, structured data for SEO
 - **CSS3** — Modern CSS (no preprocessor, no framework), Mobile First approach
 - **Vanilla JS** — Minimal, only when necessary, zero heavy dependencies
-- **Hosting** — Static deployment on Netlify or Vercel
+- **Hosting** — Static deployment on Cloudflare Pages (headers in `_headers`)
 - **No database** — Fully static, no server-side processing
 
 ## Running Locally
